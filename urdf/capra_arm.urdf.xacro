@@ -3,16 +3,17 @@
 
   <xacro:include filename="$(find robotiq_2f_140_gripper_visualization)/urdf/robotiq_arg2f_140_model_macro.xacro" />
 
-   <xacro:macro name="capra_arm" params="parent *origin sim">
+   <xacro:macro name="capra_arm" params="parent">
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxx Base du bras xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
      <joint name="arm_attach" type="fixed">
        <parent link="${parent}"/>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
        <child link="CA_01"/>
        <dynamics damping="0.1"/>
        <limit effort="10000.0" lower="-1.49" upper="1.49" velocity="1"/>
     <!-- Utiliser l'origine specifiee dans le xacro parent -->
-       <xacro:insert_block name="origin"/>
+       <!-- <xacro:insert_block name="origin"/> -->
      </joint>
 
      <link name="CA_01">

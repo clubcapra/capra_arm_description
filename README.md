@@ -9,6 +9,6 @@ This package requires robotiq's robotiq_2f_140_gripper_visualization available a
 ```
 roslaunch capra_arm_description test_launch.launch
 ```
-Set Fixed Frame to root
-Add RobotModel view
-Play with joint_state_publisher sliders
+* Set Fixed Frame to root
+* Add RobotModel view
+* Play with joint_state_publisher sliders

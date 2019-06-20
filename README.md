@@ -7,7 +7,8 @@ This package requires robotiq's robotiq_2f_140_gripper_visualization available a
 
 ## To test with RViz
 ```
-roslaunch capra_arm_description test_launch.launch sim:=true
+roslaunch capra_arm_description test_launch.launch
 ```
-Set Fixed Frame to base_link
-Then add a RobotModel view.
+Set Fixed Frame to root
+Add RobotModel view
+Play with joint_state_publisher sliders

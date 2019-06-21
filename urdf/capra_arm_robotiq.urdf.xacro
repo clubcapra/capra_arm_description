@@ -11,7 +11,7 @@
   <joint name="gripper_base" type="fixed">
     <parent link="ca_link6"/>
     <child link="robotiq_arg2f_base_link"/>
-    <origin xyz="0 0.09215 0" rpy="${-pi/2} ${-pi/2} 0"/>
+    <origin xyz="0 0 -0.09215" rpy="0 ${pi} ${pi/2}"/>
   </joint>
 
 </robot>

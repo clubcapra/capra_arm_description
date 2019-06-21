@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="capra_arm">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="capra_arm_with_gripper">
   <xacro:include filename="$(find capra_arm_description)/urdf/capra_arm.xacro"/>
   <!-- <xacro:include filename="$(find franka_description)/robots/hand.xacro"/> -->
   <xacro:capra_arm />

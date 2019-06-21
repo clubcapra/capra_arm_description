@@ -84,7 +84,7 @@
       </collision>
     </link>
     <joint name="${arm_id}_joint3" type="revolute">
-      <origin rpy="0 0 ${pi/2}" xyz="0 0.3556 0"/>
+      <origin rpy="0 0 ${pi/2}" xyz="0 0.465 0"/>
       <parent link="${arm_id}_link2"/>
       <child link="${arm_id}_link3"/>
       <axis xyz="0 0 1"/>
@@ -124,7 +124,7 @@
       </collision>
     </link>
     <joint name="${arm_id}_joint5" type="revolute">
-      <origin rpy="0 0 0" xyz="0 0.24765 0"/>
+      <origin rpy="0 0 0" xyz="0 0.265 0"/>
       <parent link="${arm_id}_link4"/>
       <child link="${arm_id}_link5"/>
       <axis xyz="0 0 1"/>

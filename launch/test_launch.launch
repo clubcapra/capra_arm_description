@@ -2,12 +2,12 @@
 
 <launch>
     <!-- sim arg -->
-    <arg name="sim" default="false" />
+    <!-- <arg name="sim" default="false" /> -->
     <arg name="test" default="true" />
     <arg name="gui" default="true" />
 
     <!-- load the urdf -->
-    <param name="robot_description" command="xacro --inorder '$(find capra_arm_description)/urdf/capra_master_test.urdf.xacro' sim:=$(arg sim)"/>
+    <param name="robot_description" command="xacro --inorder '$(find capra_arm_description)/urdf/capra_arm_robotiq.urdf.xacro'"/>
 
     <!-- publish all the frames to TF -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">

@@ -13,32 +13,57 @@
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/CA-01.stl"/>
         </geometry>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <material name="arm_color">
+          <color rgba="0.99 0.3 0.3 1"/>
+        </material>
       </visual>
       <collision>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/CA-01.stl"/>
         </geometry>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
       </collision>
+<!--       <inertial>
+        <mass value="0.1" />
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <inertia ixx = "0.00001" ixy = "0.0" ixz = "0.0"
+                 iyy= "0.00001" iyz = "0.0"
+                 izz = "0.00001" />
+      </inertial> -->
     </link>
     <link name="${arm_id}_link1">
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/CA-02.stl"/>
         </geometry>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <material name="arm_color">
+          <color rgba="0.99 0.3 0.3 1"/>
+        </material>
       </visual>
       <collision>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/CA-02.stl"/>
         </geometry>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
       </collision>
+<!--       <inertial>
+        <mass value="0.1" />
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <inertia ixx = "0.00001" ixy = "0.0" ixz = "0.0"
+                 iyy= "0.00001" iyz = "0.0"
+                 izz = "0.00001" />
+      </inertial> -->
     </link>
     <joint name="${arm_id}_joint1" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
-      <origin rpy="0 0 0" xyz="0 0 0.333"/>
+      <origin xyz="0 0 0.051" rpy="0 0 0"/>
       <parent link="${arm_id}_link0"/>
       <child link="${arm_id}_link1"/>
+      <dynamics damping="0.1"/>
       <axis xyz="0 0 1"/>
-      <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750"/>
+      <limit effort="10000.0" lower="${-pi}" upper="${pi}" velocity="0.6"/>
+      <axis xyz="0 1 0"/>
     </joint>
     <link name="${arm_id}_link2">
       <visual>
@@ -53,12 +78,12 @@
       </collision>
     </link>
     <joint name="${arm_id}_joint2" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-1.7628" soft_upper_limit="1.7628"/>
-      <origin rpy="${-pi/2} 0 0" xyz="0 0 0"/>
+      <origin rpy="${pi/2} 0 0" xyz="0 0 .0889"/>
       <parent link="${arm_id}_link1"/>
       <child link="${arm_id}_link2"/>
       <axis xyz="0 0 1"/>
-      <limit effort="87" lower="-1.7628" upper="1.7628" velocity="2.1750"/>
+      <limit effort="87" lower="${-pi/2}" upper="${pi/2}" velocity="2.1750"/>
+      <axis xyz="0 1 0"/>
     </joint>
     <link name="${arm_id}_link3">
       <visual>
@@ -73,12 +98,12 @@
       </collision>
     </link>
     <joint name="${arm_id}_joint3" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
-      <origin rpy="${pi/2} 0 0" xyz="0 -0.316 0"/>
+      <origin rpy="0 0 ${pi/2}" xyz="0 0.3556 0"/>
       <parent link="${arm_id}_link2"/>
       <child link="${arm_id}_link3"/>
       <axis xyz="0 0 1"/>
-      <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750"/>
+      <limit effort="87" lower="${-pi/2}" upper="${pi/2}" velocity="2.1750"/>
+      <!-- <axis xyz="0 1 0"/> -->
     </joint>
     <link name="${arm_id}_link4">
       <visual>
@@ -93,12 +118,12 @@
       </collision>
     </link>
     <joint name="${arm_id}_joint4" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-3.0718" soft_upper_limit="-0.0698"/>
-      <origin rpy="${pi/2} 0 0" xyz="0.0825 0 0"/>
+      <origin rpy="0 0 0" xyz="0.0889 0.047625 0"/>
       <parent link="${arm_id}_link3"/>
       <child link="${arm_id}_link4"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="87" lower="${-pi}" upper="${pi}" velocity="2.1750"/>
       <axis xyz="0 0 1"/>
-      <limit effort="87" lower="-3.0718" upper="-0.0698" velocity="2.1750"/>
     </joint>
     <link name="${arm_id}_link5">
       <visual>
@@ -113,12 +138,12 @@
       </collision>
     </link>
     <joint name="${arm_id}_joint5" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
-      <origin rpy="${-pi/2} 0 0" xyz="-0.0825 0.384 0"/>
+      <origin rpy="0 0 0" xyz="0 0.24765 0"/>
       <parent link="${arm_id}_link4"/>
       <child link="${arm_id}_link5"/>
       <axis xyz="0 0 1"/>
-      <limit effort="12" lower="-2.8973" upper="2.8973" velocity="2.6100"/>
+      <limit effort="10000.0" lower="${-pi/2}" upper="${pi/2}" velocity="0.57"/>
+      <axis xyz="0 1 0"/>
     </joint>
     <link name="${arm_id}_link6">
       <visual>
@@ -133,19 +158,17 @@
       </collision>
     </link>
     <joint name="${arm_id}_joint6" type="revolute">
-      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-0.0175" soft_upper_limit="3.7525"/>
-      <origin rpy="${pi/2} 0 0" xyz="0 0 0"/>
+      <origin rpy="0 ${pi/2} 0" xyz="0 0.0762 0"/>
       <parent link="${arm_id}_link5"/>
       <child link="${arm_id}_link6"/>
-      <axis xyz="0 0 1"/>
-      <limit effort="12" lower="-0.0175" upper="3.7525" velocity="2.6100"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="10000.0" lower="${-pi/2}" upper="${pi/2}" velocity="0.57"/>
     </joint>
-    <link name="${arm_id}_link7"/>
-    <joint name="${arm_id}_joint7" type="fixed">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+    <!-- <link name="${arm_id}_link7"/> -->
+    <!-- <joint name="${arm_id}_joint7" type="fixed">
+      <origin xyz="0 0.09215 0" rpy="0 0 0"/>
       <parent link="${arm_id}_link6"/>
       <child link="${arm_id}_link7"/>
-      <axis xyz="0 0 0"/>
-    </joint>
+    </joint> -->
   </xacro:macro>
 </robot>

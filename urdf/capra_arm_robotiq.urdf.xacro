@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="capra_arm_with_gripper">
   <xacro:include filename="$(find capra_arm_description)/urdf/capra_arm.xacro"/>
-  <!-- <xacro:include filename="$(find franka_description)/robots/hand.xacro"/> -->
   <xacro:capra_arm />
-  <!-- <xacro:hand ns="panda" rpy="0 0 ${-pi/4}" connected_to="ca_link8"/> -->
+  
+  <!-- Add robotiq gripper -->
   <xacro:include filename="$(find robotiq_2f_140_gripper_visualization)/urdf/robotiq_arg2f_140_model_macro.xacro"/>
   <xacro:robotiq_arg2f_140 prefix=""/>
 
+  <!-- attach robotiq gripper to capra_arm flange -->
   <joint name="gripper_base" type="fixed">
     <parent link="ca_link6"/>
     <child link="robotiq_arg2f_base_link"/>

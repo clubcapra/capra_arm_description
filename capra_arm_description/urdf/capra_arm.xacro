@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="capra">
+  <xacro:macro name="capra_arm" params="arm_id:='ca' description_pkg:='capra_arm_description' connected_to:='' xyz:='0 0 0' rpy:='0 0 0'">
+    <xacro:unless value="${not connected_to}">
+      <joint name="${arm_id}_joint_${connected_to}" type="fixed">
+        <parent link="${connected_to}"/>
+        <child link="${arm_id}_link0"/>
+        <origin rpy="${rpy}" xyz="${xyz}"/>
+      </joint>
+    </xacro:unless>
+    <link name="${arm_id}_link0">
+      <visual>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-01.stl"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <!-- <material name="arm_color">
+          <color rgba="0.99 0.3 0.3 1"/>
+        </material> -->
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-01.stl"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      </collision>
+    </link>
+    <link name="${arm_id}_link1">
+      <visual>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-02.stl"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+        <!-- <material name="arm_color">
+          <color rgba="0.99 0.3 0.3 1"/>
+        </material> -->
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-02.stl"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
+      </collision>
+    </link>
+    <joint name="${arm_id}_joint1" type="revolute">
+      <origin xyz="0 0 0.051" rpy="0 0 0"/>
+      <parent link="${arm_id}_link0"/>
+      <child link="${arm_id}_link1"/>
+      <dynamics damping="0.1"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="10000.0" lower="${-pi}" upper="${pi}" velocity="1.0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+    <link name="${arm_id}_link2">
+      <visual>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-03.stl"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-03.stl"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${arm_id}_joint2" type="revolute">
+      <origin rpy="${pi/2} 0 0" xyz="0 0 .0889"/>
+      <parent link="${arm_id}_link1"/>
+      <child link="${arm_id}_link2"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="10000.0" lower="${-pi/2}" upper="${pi/2}" velocity="1.0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+    <link name="${arm_id}_link3">
+      <visual>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-04.stl"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-04.stl"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${arm_id}_joint3" type="revolute">
+      <origin rpy="0 0 ${pi/2}" xyz="0 0.465 0"/>
+      <parent link="${arm_id}_link2"/>
+      <child link="${arm_id}_link3"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="10000.0" lower="${-pi/2}" upper="${pi/2}" velocity="1.0"/>
+      <!-- <axis xyz="0 1 0"/> -->
+    </joint>
+    <link name="${arm_id}_link4">
+      <visual>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-05.stl"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-05.stl"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${arm_id}_joint4" type="revolute">
+      <origin rpy="0 0 0" xyz="0.0889 0.047625 0"/>
+      <parent link="${arm_id}_link3"/>
+      <child link="${arm_id}_link4"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="10000.0" lower="${-pi}" upper="${pi}" velocity="0.57"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+    <link name="${arm_id}_link5">
+      <visual>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-06.stl"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-06.stl"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${arm_id}_joint5" type="revolute">
+      <origin rpy="0 0 0" xyz="0 0.265 0"/>
+      <parent link="${arm_id}_link4"/>
+      <child link="${arm_id}_link5"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="10000.0" lower="${-pi/2}" upper="${pi/2}" velocity="0.57"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+    <link name="${arm_id}_link6">
+      <visual>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/visual/CA-07.stl"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/collision/CA-07.stl"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${arm_id}_joint6" type="revolute">
+      <origin rpy="${pi/2} ${pi/2} 0" xyz="0 0.0762 0"/>
+      <parent link="${arm_id}_link5"/>
+      <child link="${arm_id}_link6"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="10000.0" lower="${-2*pi}" upper="${2*pi}" velocity="0.57"/>
+    </joint>
+  </xacro:macro>
+</robot>

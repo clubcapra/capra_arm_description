@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: capra_arm_description
+    relative_path: urdf/capra_arm_robotiq.urdf.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/capra_arm_with_gripper.srdf
+  CONFIG:
+    author_name: Alexandre Francoeur
+    author_email: capra@clubcapra.com
+    generated_timestamp: 1561168406

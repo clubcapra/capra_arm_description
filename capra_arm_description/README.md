@@ -1,4 +1,4 @@
-# capra_arm
+# capra_arm_description
 
 This repo contains the description for CAPRA's arm
 
@@ -7,8 +7,7 @@ This package requires robotiq's robotiq_2f_140_gripper_visualization available a
 
 ## To test with RViz
 ```
-roslaunch capra_arm_description test_launch.launch
+roslaunch capra_arm_description test_launch.launch sim:=true
 ```
-* Set Fixed Frame to root
-* Add RobotModel view
-* Play with joint_state_publisher sliders
+Set Fixed Frame to base_link
+Then add a RobotModel view.

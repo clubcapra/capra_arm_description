@@ -3,8 +3,8 @@
 <launch>
     <!-- sim arg -->
     <!-- <arg name="sim" default="false" /> -->
-    <arg name="test" default="true" />
-    <arg name="gui" default="true" />
+    <arg name="test" default="false" />
+    <arg name="gui" default="false" />
 
     <!-- load the urdf -->
     <param name="robot_description" command="xacro --inorder '$(find capra_arm_description)/urdf/capra_arm_robotiq.urdf.xacro'"/>
@@ -18,7 +18,7 @@
       <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
     </group>
 
-    <!-- launch rviz to see the model -->
+    <!-- launch rviz to see the model --> -->
     <node name="rviz" pkg="rviz" type="rviz">
     </node>
 

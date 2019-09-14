@@ -1,4 +1,4 @@
-# capra_arm
+# Ovis
 
 This repo contains the configurations for CAPRA's arm
 

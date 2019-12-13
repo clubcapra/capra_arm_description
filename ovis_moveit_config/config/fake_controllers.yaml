@@ -1,0 +1,12 @@
+controller_list:
+  - name: fake_arm_controller
+    joints:
+      - ovis_joint1
+      - ovis_joint2
+      - ovis_joint3
+      - ovis_joint4
+      - ovis_joint5
+      - ovis_joint6
+  - name: fake_gripper_controller
+    joints:
+      - finger_joint

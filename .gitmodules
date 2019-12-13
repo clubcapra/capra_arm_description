@@ -1,0 +1,3 @@
+[submodule "ovis_description"]
+	path = ovis_description
+	url = https://github.com/clubcapra/ovis_description.git

@@ -35,8 +35,8 @@ controller_list:
       - ovis_joint5
       - ovis_joint6
   - name: gripper_controller
-    action_ns: follow_joint_trajectory
+    action_ns: gipper_cmd
+    type: GripperCommand
     default: True
-    type: FollowJointTrajectory
     joints:
-      finger_joint
+      - finger_joint

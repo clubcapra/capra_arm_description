@@ -38,6 +38,7 @@
 
   <include file="$(find ovis_moveit_config)/launch/move_group.launch">
     <arg name="publish_monitored_planning_scene" value="true" />
+    <arg name="fake_execution" value="true"/>
   </include>
 
   <include file="$(find ovis_moveit_config)/launch/moveit_rviz.launch">

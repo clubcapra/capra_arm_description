@@ -23,7 +23,13 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 controller_list:
-  - name: arm_controller
+  - name: gripper_controller
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      finger_joint
+  - name: manipulator_controller
     action_ns: follow_joint_trajectory
     default: True
     type: FollowJointTrajectory
@@ -34,9 +40,4 @@ controller_list:
       - ovis_joint4
       - ovis_joint5
       - ovis_joint6
-  - name: gripper_controller
-    action_ns: gripper_cmd
-    type: GripperCommand
-    default: True
-    joints:
-      - finger_joint
+      - moveit_handle

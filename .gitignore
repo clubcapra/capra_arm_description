@@ -184,5 +184,6 @@ gtest
 
 #VS Code
 /.vscode
+**/.vscode
 
 src/rqt_tutorial

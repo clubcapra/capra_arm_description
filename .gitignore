@@ -183,7 +183,6 @@ gtest
 *.swp
 
 #VS Code
-*/.vscode
-**/.vscode
+/.vscode
 
 src/rqt_tutorial

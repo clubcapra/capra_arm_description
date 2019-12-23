@@ -33,7 +33,7 @@
   <!--   - this typically includes: robot_state, motion_interface, and joint_trajectory_action nodes -->
   <!--   - replace these calls with appropriate robot-specific calls or launch files -->
   <group unless="$(arg sim)">
-    <include file="$(find [robot_interface_pkg])/launch/robot_interface.launch" >
+    <include file="$(find ovis_bringup)/launch/kinova_robot.launch" >
       <arg name="robot_ip" value="$(arg robot_ip)"/>
     </include>
   </group>

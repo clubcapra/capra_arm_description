@@ -23,7 +23,7 @@
   <!-- Launch twist -->
   <include if="$(arg use_twist)" file="$(find jog_controller)/launch/twist.launch">
     <arg name="group_name" value="manipulator"/>
-    <arg name="frame_id" value="ovis_base_link_base"/>
+    <arg name="frame_id" value="ovis_link_tool0"/>
     <arg name="link_name" value="ovis_link_tool0"/>
     <arg name="launch_spacenav" value="true"/>
   </include>

@@ -26,6 +26,7 @@
     <arg name="frame_id" value="ovis_link_tool0"/>
     <arg name="link_name" value="ovis_link_tool0"/>
     <arg name="launch_spacenav" value="true"/>
+    <arg name="axes_remap" value="false"/>
   </include>
 
 </launch>

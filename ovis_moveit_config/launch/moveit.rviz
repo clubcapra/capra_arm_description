@@ -4,8 +4,9 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Global Options1
+        - /Status1
         - /MotionPlanning1
-        - /MotionPlanning1/Planned Path1/Link Tree1/root1/Details1
       Splitter Ratio: 0.7425600290298462
     Tree Height: 249
   - Class: rviz/Help
@@ -68,123 +69,108 @@ Visualization Manager:
       Planned Path:
         Color Enabled: false
         Interrupt Display: false
-        Link Tree:
-          All Links Enabled: false
+        Links:
+          All Links Enabled: true
           Expand Joint Details: false
           Expand Link Details: false
           Expand Tree: false
-          Link Tree Style: Tree of links
-          root:
-            Details:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            ovis_link_base:
-              Details:
-                Alpha: 1
-                Show Axes: false
-                Show Trail: false
-              Value: true
-              ovis_link_1:
-                Details:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                Value: true
-                ovis_link_2:
-                  Details:
-                    Alpha: 1
-                    Show Axes: false
-                    Show Trail: false
-                  Value: true
-                  ovis_link_3:
-                    Details:
-                      Alpha: 1
-                      Show Axes: false
-                      Show Trail: false
-                    Value: true
-                    ovis_link_4:
-                      Details:
-                        Alpha: 1
-                        Show Axes: false
-                        Show Trail: false
-                      Value: true
-                      ovis_link_5:
-                        Details:
-                          Alpha: 1
-                          Show Axes: false
-                          Show Trail: false
-                        Value: true
-                        ovis_link_6:
-                          Details:
-                            Alpha: 1
-                            Show Axes: false
-                            Show Trail: false
-                          Value: true
-                          ovis_link_tool0:
-                            Details:
-                              Alpha: 1
-                              Show Axes: false
-                              Show Trail: false
-                            ovis_end_effector:
-                              Details:
-                                Alpha: 1
-                                Show Axes: false
-                                Show Trail: false
-                            robotiq_arg2f_base_link:
-                              Details:
-                                Alpha: 1
-                                Show Axes: false
-                                Show Trail: false
-                              Value: false
-                              left_inner_knuckle:
-                                Details:
-                                  Alpha: 1
-                                  Show Axes: false
-                                  Show Trail: false
-                                Value: false
-                              left_outer_knuckle:
-                                Details:
-                                  Alpha: 1
-                                  Show Axes: false
-                                  Show Trail: false
-                                Value: false
-                                left_outer_finger:
-                                  Details:
-                                    Alpha: 1
-                                    Show Axes: false
-                                    Show Trail: false
-                                  Value: false
-                                  left_inner_finger:
-                                    Details:
-                                      Alpha: 1
-                                      Show Axes: false
-                                      Show Trail: false
-                                    Value: false
-                              right_inner_knuckle:
-                                Details:
-                                  Alpha: 1
-                                  Show Axes: false
-                                  Show Trail: false
-                                Value: true
-                              right_outer_knuckle:
-                                Details:
-                                  Alpha: 1
-                                  Show Axes: false
-                                  Show Trail: false
-                                Value: true
-                                right_outer_finger:
-                                  Details:
-                                    Alpha: 1
-                                    Show Axes: false
-                                    Show Trail: false
-                                  Value: true
-                                  right_inner_finger:
-                                    Details:
-                                      Alpha: 1
-                                      Show Axes: false
-                                      Show Trail: false
-                                    Value: true
+          Link Tree Style: Links in Alphabetic Order
+          left_inner_finger:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          left_inner_knuckle:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          left_outer_finger:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          left_outer_knuckle:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          ovis_camera:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          ovis_end_effector:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          ovis_link_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          ovis_link_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          ovis_link_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          ovis_link_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          ovis_link_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          ovis_link_6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          ovis_link_base:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          ovis_link_tool0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          ovis_root:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          right_inner_finger:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_inner_knuckle:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_outer_finger:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_outer_knuckle:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          robotiq_arg2f_base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
         Loop Animation: false
         Robot Alpha: 0.5
         Robot Color: 150; 50; 150
@@ -250,6 +236,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          ovis_camera:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           ovis_end_effector:
             Alpha: 1
             Show Axes: false
@@ -293,6 +283,10 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          ovis_root:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           right_inner_finger:
             Alpha: 1
             Show Axes: false
@@ -318,10 +312,6 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          root:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
         Robot Alpha: 0.5
         Show Robot Collision: false
         Show Robot Visual: true
@@ -331,7 +321,7 @@ Visualization Manager:
   Global Options:
     Background Color: 85; 87; 83
     Default Light: true
-    Fixed Frame: root
+    Fixed Frame: ovis_root
     Frame Rate: 30
   Name: root
   Tools:
@@ -358,10 +348,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.05979696661233902
+      Pitch: 0.11979694664478302
       Target Frame: root
       Value: XYOrbit (rviz)
-      Yaw: 3.979947090148926
+      Yaw: 1.7899445295333862
     Saved: ~
 Window Geometry:
   Displays:
@@ -375,9 +365,9 @@ Window Geometry:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000002b2000003a3fc0200000007fb000000100044006900730070006c006100790073010000003f00000139000000cc00fffffffb0000000800480065006c00700000000342000000bb0000006f00fffffffb0000000a0056006900650077007300000003b0000000b0000000a900fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004400fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067010000017e00000264000001b400ffffff00000485000003a300000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000002b2000003a3fc0200000007fb000000100044006900730070006c006100790073010000003f00000139000000cc00fffffffb0000000800480065006c00700000000342000000bb0000006f00fffffffb0000000a0056006900650077007300000003b0000000b0000000a900fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004400fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067010000017e00000264000001b400ffffff00000491000003a300000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
-  Width: 1853
-  X: 67
+  Width: 1865
+  X: 55
   Y: 27

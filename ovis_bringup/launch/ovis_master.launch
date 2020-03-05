@@ -1,0 +1,7 @@
+<launch>
+    <!-- Kinova Driver -->
+    <include file="$(find ovis_bringup)/launch/kinova_driver.launch"/>
+
+    <!-- Robotiq Gripper Driver -->
+    <!-- <include file="$(find ovis_bringup)/launch/robotiq_driver.launch"/> -->
+</launch>

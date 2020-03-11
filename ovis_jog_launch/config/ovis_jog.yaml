@@ -12,10 +12,4 @@ jog_frame_node:
     - manipulator
   link_names:
     - ovis_link_base
-    - ovis_link_1
-    - ovis_link_2
-    - ovis_link_3
-    - ovis_link_4
-    - ovis_link_5
-    - ovis_link_6
     - ovis_end_effector

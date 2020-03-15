@@ -11,7 +11,7 @@
   <node name="$(arg kinova_robotName)_driver" pkg="kinova_driver" type="kinova_arm_driver" output="screen" cwd="node" args="$(arg kinova_robotType)">
     <rosparam file="$(find ovis_bringup)/config/$(arg capra_robotName)_parameters.yaml" command="load" />
     <param name="serial_number" value="$(arg kinova_robotSerial)" />
-    <param name="robot_name" value="$(arg kinova_robotName)" />
+    <param name="robot_name" value="$(arg capra_robotName)" />
     <param name="robot_type" value="$(arg kinova_robotType)" />
     <param name="use_jaco_v1_fingers" value="$(arg use_jaco_v1_fingers)" />
     <param name="status_interval_seconds" value="$(arg feedback_publish_rate)" />

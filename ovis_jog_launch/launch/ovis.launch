@@ -1,16 +1,19 @@
 <launch>
   <arg name="use_joy" default="false"/>
   <arg name="use_twist" default="true"/>
+  <arg name="use_action" default="true"/>
 
   <!-- Launch jog controllers -->
   <rosparam command="load" file="$(find ovis_jog_launch)/config/ovis_jog.yaml"/>
+
   <node name="jog_joint_node" pkg="jog_controller" type="jog_joint_node">
-    <param name="use_action" value="true"/>
-    <param name="time_from_start" value="1.0"/>
+    <param name="use_action" value="$(arg use_action)"/>
+    <!-- <param name="time_from_start" value="1.0"/> -->
   </node>
   <node name="jog_frame_node" pkg="jog_controller" type="jog_frame_node">
-    <param name="use_action" value="true"/>
-    <param name="time_from_start" value="0.01"/>
+    <param name="use_action" value="$(arg use_action)"/>
+    <!-- <param name="time_from_start" value="0.01"/> -->
+    <remap from="/joint_states" to="ovis/joint_states"/>
   </node>
 
   <!-- Launch joypad -->

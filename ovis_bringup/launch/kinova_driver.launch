@@ -8,7 +8,7 @@
   <arg name="feedback_publish_rate" default="0.1" />
   <arg name="capra_robotName" default="ovis"/>
 
-  <node name="$(arg kinova_robotName)_driver" pkg="kinova_driver" type="kinova_arm_driver" output="screen" cwd="node" args="$(arg kinova_robotType)">
+  <node name="$(arg capra_robotName)_driver" pkg="kinova_driver" type="kinova_arm_driver" output="screen" cwd="node" args="$(arg kinova_robotType)">
     <rosparam file="$(find ovis_bringup)/config/$(arg capra_robotName)_parameters.yaml" command="load" />
     <param name="serial_number" value="$(arg kinova_robotSerial)" />
     <param name="robot_name" value="$(arg capra_robotName)" />
@@ -27,7 +27,7 @@
   <group if="$(arg use_urdf)">
     <param name="robot_description" command="xacro '$(find ovis_description)/urdf/$(arg capra_robotName)_standalone.xacro'" />
     <node name="$(arg capra_robotName)_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
-      <remap from="joint_states" to="/$(arg capra_robotName)_driver/out/joint_state"/>
+      <remap from="joint_states" to="$(arg capra_robotName)_driver/joint_states"/>
     </node>
   </group>
 

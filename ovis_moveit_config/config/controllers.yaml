@@ -1,6 +1,6 @@
 controller_list:
-  - name: ""
-    action_ns: joint_trajectory_action
+  - name: ovis
+    action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
     joints:
